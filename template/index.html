@@ -9,107 +9,89 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
 
 </head>
-<body style = "background-color: #0b78e6;">
+<body style background-color: #EEEEEE ;>
 
 <div class="ui container">
         <h3 style = "background-color: #1b1c1d;font-size: xx-large; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 10px;" class="ui block inverted center aligned header">
-            Goat Kids Survival Analysis
+            Goat Kids Survival Model
         </h3>
     <div class="ui inverted segment">
       <div class="ui inverted form">
         <form action="{{ url_for('predict') }}" method="POST">
-        <div class="two fields">
-
+        <div class="three fields">
           <div class="field">
-            <label>Number of Pregnancies ?</label>
-                <input autofocus type="text" name="pregnancies" placeholder="Number of Pregnancies eg. 0" >
-          </div>
-		  
-          <div class="field">
-            <label>Glucose (mg/dL) ?</label>
-                <input autofocus type="text" name="glucose" placeholder="Glucose (mg/dL) eg. 80" >
-          </div>
-
-        </div>
-        <div class="two fields">
-          <div class="field">
-            <label>Blood Pressure (mmHg) ?</label>
-                <input autofocus type="text" name="bloodpressure" placeholder="Blood Pressure (mmHg) eg. 80" >
+            <label>Time of first collustrum ?</label>
+                <input autofocus type="text" name="collustrum" placeholder="Time of first collustrum eg. 0" >
           </div>
           <div class="field">
-            <label>Skin Thickness (mm) ?</label>
-                <input autofocus type="text" name="skinthickness" placeholder="Skin Thickness (mm) eg. 20" >
+            <label>Experience ?</label>
+                <input autofocus type="text" name="experience" placeholder="Experience eg. 80" >
+          </div>
+          <div class="field">
+            <label>Cleaness of barn ?</label>
+                <input autofocus type="text" name="barn" placeholder="Cleaness of barn eg. 80" >
           </div>
         </div>
+        <div class="three fields">
+          <div class="field">
+            <label>Ownership ?</label>
+                <input autofocus type="text" name="Ownership" placeholder="Ownership eg. 80" >
+          </div>
+          <div class="field">
+            <label>Age of the farm ?</label>
+                <input autofocus type="text" name="age" placeholder="Age of the farm eg. 20" >
+          </div>
+          <div class="field">
+            <label>Weaning age ?</label>
+                <input autofocus type="text" name="weaning" placeholder="Weaning age eg. 80" >
+          </div>
+        </div>
         <div class="two fields">
             <div class="field">
-                <label>Insulin Level (IU/mL) ?</label>
-                <input autofocus type="text" name="insulin" placeholder="Insulin Level (IU/mL) eg. 80" >
+                <label>Amount of liquid diet ?</label>
+                <input autofocus type="text" name="liquid" placeholder="Amount of liquid diet eg. 80" >
             </div>
             <div class="field">
-                <label>Body Mass Index (kg/m²) ?</label>
-                <input autofocus type="text" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 23.1" >
+                <label>Sex ?</label>
+                <input autofocus type="text" name="sex" placeholder="Sex eg. 23.1" >
             </div>
+            <div class="field">
+              <label>Source of income ?</label>
+              <input autofocus type="text" name="income" placeholder="Source of income eg. 23.1" >
           </div>
-          <div class="two fields">
+          </div>
+          <div class="three fields">
             <div class="field">
-                <label>Diabetes Pedigree Function ?</label>
-                <input autofocus type="text" name="dpf" placeholder="Diabetes Pedigree Function(likelihood of diabetes based on family history) eg. 0.52" >
+                <label>Herd size ?</label>
+                <input autofocus type="text" name="size" placeholder="Herd size eg. 0.52" >
             </div>
             <div class="field">
-                <label>Age (years) ?</label>
+                <label>Education ?</label>
                 <input autofocus type="text" name="age" placeholder="Age (years) eg. 34" >
             </div>
+            <div class="field">
+              <label>Housing ?</label>
+              <input autofocus type="text" name="housing" placeholder="Housing eg. 34" >
+          </div>
+          </div>
+          <div class="three fields">
+            <div class="field">
+                <label>Parity of the dam ?</label>
+                <input autofocus type="text" name="parity" placeholder="Herd size eg. 0.52" >
+            </div>
+            <div class="field">
+                <label>Method of collustrum feeding ?</label>
+                <input autofocus type="text" name="feeding collustrum" placeholder="Method of collustrum feeding eg. 34" >
+            </div>
+            <div class="field">
+              <label> ?</label>
+              <input autofocus type="text" name="housing" placeholder="|" >
+          </div>
           </div>
           <button class="ui primary button" type="submit" >Predict</button>
       </form>
       </div>
-    </div>
-    
-  <table class="ui selectable inverted table">
-    <thead>
-      <tr><th colspan="9">
-        Sample Data
-      </th>
-    </tr>
-      <tr>
-        <th>Pregnancies</th>
-        <th>Glucose</th>
-        <th>BloodPressure</th>
-        <th>SkinThickness</th>
-        <th>Insulin</th>
-        <th>BMI</th>
-        <th>DiabetesPedigreeFunction</th>
-        <th>Age</th>
-        <th class="right aligned">Outcome</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>2</td>
-        <td>138</td>
-        <td>62</td>
-        <td>35</td>
-        <td>0</td>
-        <td>33.6</td>
-        <td>0.127</td>
-        <td>47</td>
-        <td class="right aligned">Diabetic</td>
-      </tr>
-      <tr>
-        <td>0</td>
-        <td>84</td>
-        <td>82</td>
-        <td>31</td>
-        <td>125</td>
-        <td>38.2</td>
-        <td>0.233</td>
-        <td>23</td>
-        <td class="right aligned">Not Diabetic</td>
-      </tr>
-    </tbody>
-  </table>
+    </div>  
 </div>
-
 </body>
 </html>
